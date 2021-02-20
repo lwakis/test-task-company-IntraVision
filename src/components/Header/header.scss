@@ -1,0 +1,22 @@
+.header {
+    position: absolute;
+    left: 95px;
+    width: calc(100% - 95px);
+    height: 65px;
+    background-color: #d1e0ed;
+    box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.2);
+}
+.search-item {
+    padding: 10px 0 0 30px;
+    input {
+        width: 680px;
+        height: 40px;
+        border: 1px solid #42aaff;
+        padding-left: 5px;
+        font-size: 15px;
+        box-shadow: 0px 0px 7px 0px rgba(0,140,240,0.15), inset -1px 0px 7px 0px rgba(0,0,0,0.1);
+        border-radius: 20px;
+        background-color: #fff !important;
+        background: url('../../assets/image/search.png') no-repeat 650px;
+    }
+}

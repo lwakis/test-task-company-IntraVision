@@ -1,0 +1,33 @@
+.navbar {
+    position: absolute;
+    z-index: 10;
+    width: 95px;
+    height: 100vh;
+    background-color: #002137;
+    color: white;
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: 300;
+
+    .logo {
+        padding: 20px 0;
+        display: block;
+        margin: 0 auto;
+    }
+}
+.nav-item {
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    img {
+        padding: 5px 0;
+    }
+}
+.nav-item:hover, .active {
+    cursor: pointer;
+    background-color: #002c49;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.15);
+}
