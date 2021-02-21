@@ -26,7 +26,7 @@ const ProblemsList = () => {
 
     return (
         <div className="two-components">
-        <div className="problems-block">
+        {!visible && <div className="problems-block">
             <button className="create-problem">Создать заявку</button>
             <table className="table-name">
                 <thead>
@@ -57,7 +57,35 @@ const ProblemsList = () => {
                 </table>
                 </div>
             ) : <Preloader/>}
+        </div>}
+        {visible && 
+            <div className="problems-block-small">
+            <button className="create-problem">Создать заявку</button>
+            <table className="table-name">
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>Название</td>
+                    </tr>
+                </thead>
+            </table>
+            <hr/>
+            
+            {allTasks ? allTasks.map(task =>
+            <div onClick={() => editTask(task)} className="task" key={task.id}> 
+                <div style={{ backgroundColor: task.statusRgb}}></div>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>{task.id}</td>
+                            <td>{task.name}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+            ) : <Preloader/>}
         </div>
+        }
         <AddStatement visible={visible} task={task}/>
         </div>
 );

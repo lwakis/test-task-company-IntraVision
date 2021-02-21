@@ -1,10 +1,10 @@
 .two-components {
-    display: flex;
+    display: contents;
 }
 .problems-block {
     padding-top: 30px;
     width: 900px;
-    height: 100vh;
+    height: 500px;
     td {
         padding-left: 40px;
         height: 30px;
@@ -74,8 +74,41 @@
     background-color: rgba(0,0,0,0.1);
 }
 
-@media(max-height:1024px) {
+.problems-block-small {
+    padding-top: 30px;
+    width: 600px;
+    height: 500px;
+
+    thead {
+        td {
+            padding-left: 0;
+        }
+    }
+    td {
+        padding-left: 40px;
+        height: 30px;
+        line-height: 30px;
+        display: inline-block;
+        overflow-y: hidden;
+    }
+    td:nth-child(2) {
+        width: 400px;
+    }
+    td:nth-child(3) {
+        width: 100px;
+        span {
+            color: #fff;
+            padding: 3px 8px;
+            border-radius: 10px;
+        }
+    }
+    hr {
+        opacity: 0.2;
+    }
+}
+
+@media(max-height:800px) {
     .problems-block { 
-        overflow-y: scroll;
+            overflow-y: scroll;
     }
 }

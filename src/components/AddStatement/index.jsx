@@ -10,8 +10,12 @@ const AddStatement = ({visible, task}) => {
                         <div className="edit-title">{task.name}</div>
                         <span>X</span>
                     </div>
+                    <div className="content-edit">
                     <div className="edit-body">
-                        <div className="edit-description">{task.description}</div>
+                        <div className="edit-description">
+                            <div className="description-title">Описание</div>
+                                <div>{task.description}</div>
+                            </div>
                         <div className="edit-comments"></div>
                         <input placeholder="Добавление коментариев" type="text"/>
                         <button>Сохранить</button>
@@ -24,7 +28,8 @@ const AddStatement = ({visible, task}) => {
                         <div className="date">{task.createdAt}</div>
                         <div className="tags">{task.tags.map(tag => <span key={tag.id}>{tag.name}</span>)}</div>
                     </div>
-                </div>
+                    </div>
+                    </div>
             </div>}
         </>
     );
