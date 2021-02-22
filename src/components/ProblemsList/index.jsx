@@ -9,12 +9,10 @@ const ProblemsList = () => {
     const [allTasks, setAllTasks] = useState(false);
     const [visible, setVisible] = useState(false);
     const [task, setTask] = useState({});
-
     useEffect(() => {
         axios.get('http://intravision-task.test01.intravision.ru/odata/tasks?tenantguid=56b01ec2-f456-4de4-8b76-5359e3a22607')
         .then(response => {
             setAllTasks(response.data.value);
-            console.log(response.data.value);
         })
     }, []);
 
@@ -22,6 +20,10 @@ const ProblemsList = () => {
         console.log(task);
         setTask(task)
         setVisible(true)
+    }
+
+    const closeEdit = () => {
+        setVisible(false)
     }
 
     return (
@@ -86,7 +88,7 @@ const ProblemsList = () => {
             ) : <Preloader/>}
         </div>
         }
-        <AddStatement visible={visible} task={task}/>
+        <AddStatement visible={visible} closeEdit={closeEdit} task={task}/>
         </div>
 );
 }
